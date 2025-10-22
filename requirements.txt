@@ -1,0 +1,6 @@
+adafruit-circuitpython-ina219
+RPi.GPIO
+smbus2
+matplotlib
+numpy
+pandas
