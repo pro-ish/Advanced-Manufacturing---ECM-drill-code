@@ -11,7 +11,7 @@ for p in (STEP_PIN, DIR_PIN, EN_PIN):
     GPIO.setup(p, GPIO.OUT, initial=GPIO.LOW)
 
 for p in (LIMIT_TOP_PIN, LIMIT_BOT_PIN):
-    GPIO.setup(p, GPIO.IN, pull_up_down=GPIO.PUD_UP)  # NC → goes LOW when pressed
+    GPIO.setup(p, GPIO.IN, pull_up_down=GPIO.PUD_UP)  # NC → LOW when pressed
 
 def _clamp_feed(feed_mm_s):
     return max(MIN_FEED_MM_S, min(MAX_FEED_MM_S, float(feed_mm_s)))
@@ -102,4 +102,3 @@ class MotionController:
             GPIO.output(STEP_PIN, GPIO.LOW);  time.sleep(0.002)
 
         print("[MOTION] Homed.")
-
