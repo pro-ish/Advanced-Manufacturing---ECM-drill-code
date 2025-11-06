@@ -10,8 +10,7 @@ GPIO.setup(RELAY_PIN, GPIO.OUT, initial=GPIO.LOW)        # drive transistor to e
 
 class SafetyManager:
     def __init__(self):
-        self._estop_active = False
-        # event detect for quick response
+        self._estop_active = (GPIO.input(ESTOP_PIN) == GPIO.LOW)
         GPIO.add_event_detect(ESTOP_PIN, GPIO.BOTH, callback=self._estop_changed, bouncetime=DEBOUNCE_MS)
 
     def _estop_changed(self, ch):
@@ -42,4 +41,3 @@ class SafetyManager:
     def wait_clear(self):
         while self._estop_active:
             time.sleep(SAFETY_POLL_MS/1000.0)
-
