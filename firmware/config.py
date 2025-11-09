@@ -47,3 +47,22 @@ PUMP_SHUNT_OHMS = 0.01
 HOME_DIR_UP     = True   # True → set DIR to move toward TOP limit
 HOME_FEED_MM_S  = 0.5
 HOME_BACKOFF_MM = 0.5
+
+# ---- INA219 per-channel config ----
+INA_ECM_ADDR       = 0x40
+INA_PUMP_ADDR      = 0x41  # wire later if needed
+
+# Your physical shunts (Ω)
+ECM_SHUNT_OHMS     = 0.010
+PUMP_SHUNT_OHMS    = 0.010
+
+# If wiring makes current negative, flip here
+ECM_INVERT_SIGN    = False
+PUMP_INVERT_SIGN   = False
+
+# Simple software zeroing (mA) added/subtracted after calibration
+ECM_I_OFFSET_MA    = 0.0
+PUMP_I_OFFSET_MA   = 0.0
+
+# Tiny smoothing for display/logs (0 = off, 0.1 = gentle)
+CURRENT_EMA_ALPHA  = 0.15
