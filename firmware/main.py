@@ -11,6 +11,11 @@ from sensors import Instrumentation
 GPIO.setmode(GPIO.BCM)
 GPIO.setwarnings(False)
 
+def volume_target_mm3():
+    from config import TOOL_DIAMETER_MM, OVERCUT_MM, TARGET_DEPTH_MM
+    D = TOOL_DIAMETER_MM + 2.0*OVERCUT_MM
+    return 0.25*3.141592653589793*(D**2)*TARGET_DEPTH_MM
+
 # graceful exit
 def _cleanup_and_exit(mc, pc):
     try:
