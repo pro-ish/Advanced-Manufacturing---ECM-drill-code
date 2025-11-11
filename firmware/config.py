@@ -66,3 +66,20 @@ PUMP_I_OFFSET_MA   = 0.0
 
 # Tiny smoothing for display/logs (0 = off, 0.1 = gentle)
 CURRENT_EMA_ALPHA  = 0.15
+
+# ---- ECM material constants for MRR ----
+ATOMIC_WEIGHT_KG_PER_MOL = 0.02698   # Aluminum
+VALENCE_Z                 = 3
+DENSITY_KG_PER_M3         = 2700.0
+CURRENT_EFFICIENCY        = 0.90
+FARADAY_C_PER_MOL         = 96485.33212
+K_MM3_PER_COULOMB = (
+    CURRENT_EFFICIENCY
+    * ATOMIC_WEIGHT_KG_PER_MOL
+    / (VALENCE_Z * FARADAY_C_PER_MOL * DENSITY_KG_PER_M3)
+) * 1e9  # mm^3 per Coulomb
+
+# ---- Hole target ----
+TOOL_DIAMETER_MM = 1.00
+OVERCUT_MM       = 0.00
+TARGET_DEPTH_MM  = 2.00
