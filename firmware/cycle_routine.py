@@ -78,7 +78,7 @@ def main():
         feed_mm_s = 0.5
         print(f"[STEP] Moving DOWN @ {feed_mm_s:.2f} mm/s until bottom limit…")
         # Large travel; move_mm will stop early on limit
-        motion.move_mm(-100.0, feed_mm_s)   # -100 mm = “big number” + relies on bottom limit
+        motion.move_mm(-100.0, 0.1)   # -100 mm = “big number” + relies on bottom limit
 
         # 4) Move up at 0.5 mm/s until top limit
         print(f"[STEP] Moving UP @ {feed_mm_s:.2f} mm/s until top limit…")
