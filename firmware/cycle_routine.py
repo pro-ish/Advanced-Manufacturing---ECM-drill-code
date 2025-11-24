@@ -68,8 +68,8 @@ def main():
         motion.set_enabled(True)
         motion.home()
 
-        # 2) Pump ON at 80 %
-        pump_duty = 80.0
+        # 2) Pump ON at 100%
+        pump_duty = 100
         print(f"[PUMP] ON @ {pump_duty:.0f} % duty.")
         pump.set_duty(pump_duty)
         time.sleep(0.5)
