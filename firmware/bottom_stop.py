@@ -16,7 +16,7 @@ from config import (
     STEPS_PER_MM,
 )
 from motion import MotionController
-    from pump import PumpController
+from pump import PumpController
 from safety import SafetyManager
 
 GPIO.setmode(GPIO.BCM)
