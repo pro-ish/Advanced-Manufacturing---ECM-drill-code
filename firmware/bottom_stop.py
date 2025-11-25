@@ -77,7 +77,7 @@ def main():
         feed_mm_s = 0.5   # 0.5 mm/s → 0.5 * 1600 = 800 steps/s
         print(f"[STEP] Moving DOWN @ {feed_mm_s:.2f} mm/s until bottom limit…")
         # Large travel; move_mm will stop early when bot_limit() becomes True
-        motion.move_mm(-100.0, feed_mm_s)   # -100 mm = “big number”, rely on limit switch
+        motion.move_mm(-100.0, 0.1)   # -100 mm = “big number”, rely on limit switch
 
         print("[SYS] Bottom reached (or travel completed).")
         print("[SYS] Pump remains ON. No upward move will be performed.")
